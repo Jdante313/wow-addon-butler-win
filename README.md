@@ -21,7 +21,7 @@ Windows 便携版插件管理器。启动后直接进入「已安装」，支持
 ## 功能
 
 - **已安装管理**：扫描 TOC 名称、版本、作者、依赖、Interface、语言；按 `## Group` 和安装包合并多文件夹插件；启用 / 停用（`.disabled`）、固定版本、卸载。
-- **来源**：Tukui、新手盒子、CurseForge、WoWInterface、GitHub。macOS 2.1.8 的默认来源是只启用 Tukui；需要中文目录时在设置里开启新手盒子，需要 CurseForge 时填写自己的 API Key。
+- **来源**：以 CurseForge 为主，另支持 Tukui、WoWInterface、GitHub。CurseForge 需要填写自己的 API Key；Tukui 免 Key，默认启用。
 - **语言标注**：中文插件显示「中文」，未发现中文显示「无中文」，未安装且无法确认显示「待检测」。
 - **版本筛选**：无限、正式服、泰坦重铸、经典旧世、探索赛季、熊猫人之谜、燃烧的远征、周年。筛选只影响搜索和列表，安装仍写入当前选中的客户端。
 - **本地管理**：安装 / 更新前自动备份；保留数量可调；备份失败会取消安装，避免原插件丢失。
@@ -64,13 +64,12 @@ data/
 
 ## 来源与 CurseForge
 
-来源优先级：官方平台 / 作者一手发布优先；新手盒子补足《魔兽世界：无限》和国服中文目录。
+主要使用 **CurseForge**：到 [CurseForge API Key 控制台](https://console.curseforge.com/?#/api-keys) 申请 Key，粘贴后保存并测试。Key 只保存在本机 `data/settings.json`。
 
-- **Tukui**：ElvUI / Tukui 官方 API，免 Key，默认启用。
-- **新手盒子**：默认关闭；需要在设置里手动开启。无限客户端会使用无限分类。
-- **CurseForge**：到 [CurseForge API Key 控制台](https://console.curseforge.com/?#/api-keys) 申请 Key，粘贴后保存并测试。Key 只保存在本机 `data/settings.json`。
-  - 设置页会显示「Key 已保存」状态，更换前先点「清除并更换」。
+- **CurseForge（主要来源）**：官方插件平台，插件数量和更新最完整。设置页会显示「Key 已保存」状态，更换前先点「清除并更换」。
   - 搜索不再带失效的 `classId=6`；`gameId=1` 已足够限定 WoW。
+  - 如果提示 Key 无效，点控制台 Key 右侧的复制按钮重新复制，或 Regenerate 后立即粘贴。
+- **Tukui**：ElvUI / Tukui 官方 API，免 Key，默认启用。
 - **WoWInterface / GitHub**：实验性来源，默认关闭。
 
 ## 分享给朋友
