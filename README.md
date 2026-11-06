@@ -6,6 +6,13 @@ Windows 便携版插件管理器。启动后直接进入「已安装」，支持
 
 当前 Windows 版本：**2.2.2**，对应 macOS **2.1.9** 的界面与功能调整。
 
+## 下载
+
+- [直接下载 Windows 版](https://github.com/Jdante313/wow-addon-butler-win/releases/latest/download/WoWAddonButler-Windows-x64.zip)（点开即下载，始终最新）
+- [最新 Release 页面](https://github.com/Jdante313/wow-addon-butler-win/releases/latest)
+
+> 发布约定：每个 Release 都要同时上传稳定文件名 `WoWAddonButler-Windows-x64.zip`，这样 `/releases/latest/download/WoWAddonButler-Windows-x64.zip` 才能始终指向最新版。
+
 ## 2.2.0 主要变化
 
 - **页面更简洁**：去掉首页推荐和「发现」入口，启动直接进入已安装插件；侧栏只保留「已安装 / 搜索插件 / 备份与迁移 / 设置」。
