@@ -4,7 +4,7 @@
 
 Windows 便携版插件管理器。启动后直接进入「已安装」，支持本地插件扫描、启停、更新、卸载、本地 ZIP 安装，以及跨来源搜索和配置快照 / WTF 备份。
 
-当前 Windows 版本：**2.2.1**，对应 macOS **2.1.8** 的界面与功能调整。
+当前 Windows 版本：**2.2.2**，对应 macOS **2.1.9** 的界面与功能调整。
 
 ## 2.2.0 主要变化
 
@@ -105,7 +105,7 @@ powershell -ExecutionPolicy Bypass -File scripts\build-portable.ps1
 
 - 后端：Node.js 标准库 + `adm-zip`，JSON 持久化。
 - 前端：原生 ES Modules + CSS，无构建步骤。
-- 测试：17 项后端测试，覆盖 TOC、版本比较、分组、精确/模糊匹配、分类、ZIP 安装、本地 ZIP、启停、停用卸载、快照、WTF、导入导出。
+- 测试：18 项后端测试，覆盖 TOC、版本比较、分组、精确/模糊匹配、分类、ZIP 安装、本地 ZIP、启停、停用卸载、快照、WTF、导入导出。
 - 打包：`scripts\build-portable.ps1`，输出 `release\魔兽插件管家` 和同名 zip。
 - 代码以 MIT License 开源；插件内容、图标及第三方平台内容的版权归各自作者/平台所有。
 

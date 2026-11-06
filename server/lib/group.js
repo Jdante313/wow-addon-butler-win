@@ -29,6 +29,7 @@ function groupInstalledAddons(addons, updateByFolder = new Map()) {
         id: key,
         packageId: addon.managed?.packageId || '',
         name: addon.managed?.remoteName || addon.name,
+        icon: addon.icon || addon.managed?.icon || '',
         folder: addon.baseFolder,
         baseFolder: addon.baseFolder,
         folders: [addon.baseFolder],
@@ -120,12 +121,16 @@ function groupInstalledAddons(addons, updateByFolder = new Map()) {
       group.tocFile = addon.tocFile || group.tocFile;
       group.interface = addon.interface || group.interface;
     }
+    if (!group.icon && (addon.icon || addon.managed?.icon)) {
+      group.icon = addon.icon || addon.managed?.icon;
+    }
     if (!group.update || addon.update?.status === 'update') {
       group.update = addon.update || group.update;
     }
   }
 
   const result = Array.from(groups.values()).map((group) => {
+    group.icon = group.icon || group.primary?.icon || group.primary?.managed?.icon || group.managed?.icon || '';
     group.folderCount = group.folders.length;
     group.mixed = group.enabledCount > 0 && group.enabledCount < group.folders.length;
     group.enabled = group.enabledCount === group.folders.length;

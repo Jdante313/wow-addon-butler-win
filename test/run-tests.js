@@ -250,6 +250,30 @@ async function main() {
     assert.equal(byName.get('Ace3').isLibrary, true);
   });
 
+  await test('grouped addon prefers managed remote folder and keeps its icon', async () => {
+    const managed = {
+      packageId: 'curseforge:9',
+      remoteName: 'Bagnon',
+      icon: 'https://example.com/bagnon.png',
+      folders: ['BagBrother', 'Bagnon'],
+    };
+    const fixture = (folder) => ({
+      folder,
+      baseFolder: folder,
+      path: `/tmp/${folder}`,
+      enabled: true,
+      name: folder,
+      version: '1.0.0',
+      modifiedAt: 0,
+      isLibrary: false,
+      managed,
+    });
+    const grouped = group.groupInstalledAddons([fixture('BagBrother'), fixture('Bagnon')]);
+    assert.equal(grouped.length, 1);
+    assert.equal(grouped[0].baseFolder, 'Bagnon');
+    assert.equal(grouped[0].icon, managed.icon);
+  });
+
   await test('installZip installs wrapped multi-folder zip and backs up old files', async () => {
     const zip = new AdmZip();
     const prefix = 'MyPack-1.2.0/';

@@ -757,7 +757,7 @@ function addonRow(addon) {
         : 'disabled';
   const sourceCell = addon.source ? sourceTag(addon.source) : muted('本地');
   const toggleLabel = addon.mixed ? '全部停用' : addon.enabled ? '停用' : '启用';
-  const avatarImage = safeImage(addon.icon);
+  const avatarImage = safeImage(addon.icon || addon.managed?.icon);
 
   return `
     <div class="addon-row" data-state="${rowState}" data-name="${esc(

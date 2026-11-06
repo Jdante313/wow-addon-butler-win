@@ -6,6 +6,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("魔兽插件管家 · WoW Addon Butler")]
 [assembly: AssemblyCompany("Personal")]
 [assembly: AssemblyCopyright("For personal use")]
-[assembly: AssemblyVersion("2.2.1.0")]
-[assembly: AssemblyFileVersion("2.2.1.0")]
+[assembly: AssemblyVersion("2.2.2.0")]
+[assembly: AssemblyFileVersion("2.2.2.0")]
 [assembly: ComVisible(false)]

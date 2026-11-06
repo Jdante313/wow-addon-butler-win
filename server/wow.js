@@ -241,6 +241,7 @@ async function readAddonFolder(folderPath, actualName, flavorFolder) {
     name,
     title,
     version: toc.version || managed?.installedVersion || '',
+    icon: managed?.icon || '',
     author: toc.author || '',
     notes: toc.notes || '',
     language: language.code,
