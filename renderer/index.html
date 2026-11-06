@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <title>魔兽插件管家</title>
+    <link rel="icon" href="/assets/icon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#/installed" aria-label="魔兽插件管家首页">
+          <img src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+          <span class="brand-copy">
+            <strong>魔兽插件管家</strong>
+            <em>ADDON BUTLER</em>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="主导航">
+          <a class="nav-item" data-route="installed" href="#/installed">
+            <span class="nav-icon" data-icon="package"></span>
+            <span class="nav-label">已安装</span>
+            <span class="nav-badge" id="nav-installed-count"></span>
+          </a>
+          <a class="nav-item" data-route="search" href="#/search">
+            <span class="nav-icon" data-icon="search"></span>
+            <span class="nav-label">搜索插件</span>
+          </a>
+          <a class="nav-item" data-route="backup" href="#/backup">
+            <span class="nav-icon" data-icon="archive"></span>
+            <span class="nav-label">备份与迁移</span>
+          </a>
+          <div class="nav-sep"></div>
+          <a class="nav-item" data-route="settings" href="#/settings">
+            <span class="nav-icon" data-icon="settings"></span>
+            <span class="nav-label">设置</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-spacer"></div>
+
+        <button class="client-card" id="client-card" type="button" data-action="goto-settings" title="更换游戏客户端">
+          <span class="client-card-icon" data-icon="gamepad" data-icon-size="17"></span>
+          <span class="client-card-copy">
+            <span class="client-card-label" id="client-card-label">未选择客户端</span>
+            <span class="client-card-path" id="client-card-path">在设置中选择游戏目录</span>
+          </span>
+          <span class="client-card-chevron" data-icon="chevronRight" data-icon-size="14"></span>
+        </button>
+
+        <div class="sidebar-foot">
+          <span class="sidebar-dot"></span>
+          <span>数据仅保存在本机</span>
+          <span class="sidebar-version" id="app-version"></span>
+        </div>
+      </aside>
+
+      <main class="main" id="main" tabindex="-1">
+        <div class="view" id="view">
+          <div class="boot">
+            <span class="spinner" aria-hidden="true"></span>
+            <p>正在读取插件目录…</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="modal-root"></div>
+    <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+    <div class="task-dock" id="task-dock"></div>
+
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

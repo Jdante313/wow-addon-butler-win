@@ -1,0 +1,17 @@
+{
+  "name": "wow-addon-butler",
+  "version": "2.2.1",
+  "private": true,
+  "description": "魔兽插件管家 - 搜索、安装、更新与本地插件管理",
+  "main": "server/index.js",
+  "author": "Personal",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "test": "node test/run-tests.js"
+  },
+  "dependencies": {
+    "adm-zip": "0.6.1"
+  }
+}
