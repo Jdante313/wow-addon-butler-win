@@ -47,8 +47,11 @@ try {
 
   $zip = Join-Path $releaseRoot '魔兽插件管家-便携版.zip'
   Compress-Archive -Path "$appDir\*" -DestinationPath $zip -CompressionLevel Optimal
+  $stableZip = Join-Path $releaseRoot 'WoWAddonButler-Windows-x64.zip'
+  Copy-Item $zip $stableZip -Force
   Write-Host "构建完成：$appDir"
   Write-Host "压缩包：$zip"
+  Write-Host "固定下载文件名：$stableZip"
 } finally {
   Pop-Location
 }
