@@ -2773,6 +2773,7 @@ function trackTask(task, options = {}) {
     ...task,
     callback: options.onDone,
     closed: false,
+    seen: false,
   });
   renderTaskDock();
   pollTask(task.id);
@@ -2851,8 +2852,10 @@ function renderTaskDock() {
         task.status === 'error' ? 'is-error' : task.status === 'success' ? 'is-success' : '';
       const running = task.status === 'running';
       const detail = task.error || task.detail || '';
+      const entering = !task.seen;
+      task.seen = true;
       return `
-      <div class="task-card ${statusClass}">
+      <div class="task-card ${statusClass}${entering ? ' is-entering' : ''}">
         <div class="task-head">
           ${running ? '<span class="spinner" style="width:13px;height:13px"></span>' : icon(
             task.status === 'error' ? 'xCircle' : task.status === 'partial' ? 'alert' : 'checkCircle',

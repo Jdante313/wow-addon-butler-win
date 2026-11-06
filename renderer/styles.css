@@ -2686,6 +2686,9 @@ textarea.input {
   background: var(--surface);
   box-shadow: var(--shadow);
   padding: 12px 13px;
+}
+
+.task-card.is-entering {
   animation: task-in 0.2s ease both;
 }
 
