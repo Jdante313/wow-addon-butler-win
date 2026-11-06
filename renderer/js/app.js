@@ -2797,6 +2797,7 @@ function scheduleTaskAutoClose(task) {
       renderTaskDock();
     }
   }, seconds * 1000);
+  renderTaskDock();
 }
 
 async function pollTask(id) {
