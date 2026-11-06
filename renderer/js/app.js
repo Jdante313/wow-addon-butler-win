@@ -2456,7 +2456,7 @@ function sourcesHtml() {
                     <span class="cf-key-saved-icon">${icon('check', 15)}</span>
                     <span class="cf-key-saved-copy">
                       <strong>CurseForge Key 已保存</strong>
-                      <span>Key 只保存在本机。需要更换时，先点「清除并更换」，再粘贴新的 Key。</span>
+                      <span>Key 只保存在本机。新 Key 可能需要 5–10 分钟生效；失败时不要连续点「测试」，换 Key 前先点「清除并更换」。</span>
                       <span class="cf-key-mask mono">••••••••••••••••</span>
                     </span>
                     <span class="cf-key-saved-actions">
@@ -2472,7 +2472,7 @@ function sourcesHtml() {
                   <div class="cf-key-head">
                     <div class="cf-key-help">
                       <strong>${icon('key', 13)} 获取 CurseForge API Key</strong>
-                      <span>打开控制台登录 → 点 Create API Key（或已有 Key 右侧的复制按钮）→ 回来粘贴 → 保存 Key → 点测试。</span>
+                      <span>打开控制台登录 → 点 Create API Key（或已有 Key 右侧的复制按钮）→ 回来粘贴 → 保存 Key → 点测试。新 Key 可能需要 5–10 分钟生效，失败时不要连续测试。</span>
                     </div>
                     <button class="btn btn-sm" type="button" data-action="external" data-url="${CF_APPLY_URL}">${icon(
                       'external',

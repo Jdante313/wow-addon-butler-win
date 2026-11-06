@@ -4,7 +4,7 @@
 
 Windows 便携版插件管理器。启动后直接进入「已安装」，支持本地插件扫描、启停、更新、卸载、本地 ZIP 安装，以及跨来源搜索和配置快照 / WTF 备份。
 
-当前 Windows 版本：**2.2.3**，对应 macOS **2.1.10** 的界面与功能调整。
+当前 Windows 版本：**2.2.4**，对应 macOS **2.1.10** 的界面与功能调整。
 
 ## 下载
 
@@ -74,8 +74,9 @@ data/
 主要使用 **CurseForge**：到 [CurseForge API Key 控制台](https://console.curseforge.com/?#/api-keys) 申请 Key，粘贴后保存并测试。Key 只保存在本机 `data/settings.json`。
 
 - **CurseForge（主要来源）**：官方插件平台，插件数量和更新最完整。设置页会显示「Key 已保存」状态，更换前先点「清除并更换」。
+  - 新生成的 Key 可能需要 **5–10 分钟**在 CurseForge 侧生效；测试失败时不要连续点「测试」，避免触发临时限流。
   - 搜索不再带失效的 `classId=6`；`gameId=1` 已足够限定 WoW。
-  - 如果提示 Key 无效，点控制台 Key 右侧的复制按钮重新复制，或 Regenerate 后立即粘贴。
+  - 如果提示 Key 无效，点控制台 Key 右侧的复制按钮重新复制，或 Regenerate 后立即粘贴，等待几分钟再测。
 - **Tukui**：ElvUI / Tukui 官方 API，免 Key，默认启用。
 - **WoWInterface / GitHub**：实验性来源，默认关闭。
 

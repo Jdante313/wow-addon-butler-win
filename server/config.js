@@ -6,7 +6,7 @@ const os = require('node:os');
 
 const APP_ROOT = path.resolve(__dirname, '..');
 const APP_NAME = '魔兽插件管家';
-const APP_VERSION = '2.2.3';
+const APP_VERSION = '2.2.4';
 const APP_PLATFORM = process.platform;
 
 function defaultDataDir() {
@@ -132,6 +132,7 @@ const DEFAULT_SETTINGS = {
     github: false,
   },
   curseforgeApiKey: '',
+  curseforgeKeySavedAt: '',
   sort: 'popular',
   autoCheckUpdates: true,
   backupBeforeUpdate: true,

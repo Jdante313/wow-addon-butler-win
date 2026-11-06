@@ -35,14 +35,22 @@ async function cf(path, ctx, options = {}) {
       retries: 1,
     });
   } catch (error) {
+    const text = `${error.message || ''} ${error.details?.status || ''}`;
+    if (/rate.?limit|too many|429/i.test(text)) {
+      throw new AppError(
+        'CurseForge 暂时限流，请等待 5–10 分钟后再测试。不要在短时间内连续点「测试连接」，否则会延长限流时间。',
+        'CF_RATE_LIMIT',
+        429,
+      );
+    }
     if (
       error.status === 401 ||
       error.status === 403 ||
-      /api key missing|invalid|unauthor|forbidden/i.test(error.message || '')
+      /api key missing|invalid|unauthor|forbidden/i.test(text)
     ) {
       throw new AppError(
-        'CurseForge API Key 无效、已过期或复制不完整。请点控制台 Key 右侧的复制按钮复制完整内容；如果仍失败，点 Regenerate 生成新 Key 后立即粘贴到设置中。',
-        'CF_INVALID_KEY',
+        'CurseForge 尚未识别这个 Key。新生成的 Key 可能需要几分钟生效，也可能触发了临时限流或复制不完整。请等待 5–10 分钟后再测试；不要连续点测试。仍然失败时，点控制台 Key 右侧的复制按钮重新复制，或 Regenerate 后立即粘贴。',
+        'CF_KEY_PENDING',
         400,
       );
     }

@@ -38,6 +38,7 @@ function sanitizeSettings(input) {
   settings.wclboxCategory = Number(settings.wclboxCategory) || 0;
   settings.uiScale = Math.max(0.8, Math.min(2, Number(settings.uiScale) || 1));
   settings.curseforgeApiKey = String(settings.curseforgeApiKey || '').trim();
+  settings.curseforgeKeySavedAt = String(settings.curseforgeKeySavedAt || '');
   settings.backupLimit = Math.max(1, Math.min(30, Number(settings.backupLimit) || 8));
   settings.maxDownloads = Math.max(1, Math.min(6, Number(settings.maxDownloads) || 3));
   settings.profileIncludeFiles = settings.profileIncludeFiles !== false;
@@ -64,7 +65,10 @@ function loadSettings() {
 function saveSettings(patch = {}) {
   ensureDirs();
   const current = settingsCache || sanitizeSettings(readJsonSync(SETTINGS_FILE, {}) || {});
+  const hasNewKey =
+    typeof patch.curseforgeApiKey === 'string' && patch.curseforgeApiKey.trim();
   settingsCache = sanitizeSettings(deepMerge(current, patch));
+  if (hasNewKey) settingsCache.curseforgeKeySavedAt = new Date().toISOString();
   writeJsonSync(SETTINGS_FILE, settingsCache);
   return settingsCache;
 }
